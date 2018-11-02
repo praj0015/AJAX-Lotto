@@ -8,7 +8,8 @@ function getRandomInteger (min, max) {
 
 function init(){
     
-    document.getElementById("btnSend").addEventListener("click",getData);
+    
+    document.getElementById("btnSend").addEventListener("click",getData,serverData);
     
 }
 function getData(){
@@ -31,7 +32,7 @@ function getData(){
      fetch(request)
     .then(function(response){
         console.log(response);
-         getRandomInteger(response.value);
+        getRandomInteger(response.value);
         return response.json();
     })
     .then(function(data){
@@ -40,4 +41,43 @@ function getData(){
     .catch(function(error){
         alert(error);
     });
+}
+function serverData(){
+    let url="https://davidst.edumedia.ca/mad9014/nums.php?digits=6&max=42";
+    let customSettings={
+        mode:"cors",
+        method:"GET"
+    };
+    
+    let request=new Request(url,customSettings);
+    
+    fetch(request)
+    .then(function(response){
+        //console.log(response);
+        return response.json();
+    })
+    .then(function(data){
+        let ul=document.querySelector('.num_list');
+        ul.innerHTML="";
+        for(let item in data){
+            let li=document.createElement("li");
+            li.innerHTML=data[item];
+            ul.appendChild(li);
+        }
+        
+        /*let df=new DocumentFragment();
+        jsondata.forEach((user)=>{
+            let li=document.createElement('li');
+            let ph=document.createElement('placeholder');
+            ph.textContent=
+            
+        })*/
+    })
+    .catch(function(error){
+        alert(error);
+    });
+}
+function navigate(){
+    
+    
 }
