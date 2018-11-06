@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", init);
 //let pages = [];
 
 function init() {
-//console.log("hi");
+    //console.log("hi");
     /* pages = document.querySelectorAll(".page");
      console.log(pages);
      document.getElementById("btnSend").addEventListener("click", function () {
@@ -21,12 +21,14 @@ function init() {
      });*/
 
     document.getElementById("btnSend").addEventListener("click", getData);
-  //  document.getElementById("btnBack").addEventListener("click",dataBack());
-
+    document.getElementById("btnBack").addEventListener("click", back());
 
 }
 
-
+function back() {
+    document.getElementById("digits").value = "";
+    document.getElementById("max").value = "";
+}
 let returnNum;
 
 function getData() {
@@ -38,10 +40,10 @@ function getData() {
 
     formData.append("digits", document.getElementById("digits").value);
     formData.append("max", document.getElementById("max").value);
-    
-   // console.log(formData);
-    
-    
+
+    // console.log(formData);
+
+
     let customSettings = {
         mode: "cors",
         method: "POST",
@@ -49,19 +51,19 @@ function getData() {
     };
 
     let request = new Request(url, customSettings);
-    
+
     console.log(customSettings);
-    
+
     console.log(request);
     fetch(request)
-        .then(function (response){
+        .then(function (response) {
             console.log(response);
-           // getRandomInteger(response.value);
+            // getRandomInteger(response.value);
             return response.json();
         })
         .then(function (data) {
             console.log(data);
-        
+
             returnNum = data.numbers;
             let ul = document.querySelector('.num_list');
             console.log(returnNum);
@@ -80,7 +82,3 @@ function getData() {
             alert(error);
         });
 }
-//function dataBack(){
-//    
-//    formData.removeChild();
-//}
