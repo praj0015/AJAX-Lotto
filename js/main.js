@@ -1,14 +1,9 @@
 document.addEventListener("DOMContentLoaded", init);
 
-//function getRandomInteger(min, max) {
-//    min = Math.ceil(min);
-//    max = Math.floor(max + 1);
-//    return Math.floor(Math.random() * (max - min)) + min;
-//}
-//let pages = [];
+let pages = [];
 
 function init() {
-    //console.log("hi");
+
     /* pages = document.querySelectorAll(".page");
      console.log(pages);
      document.getElementById("btnSend").addEventListener("click", function () {
