@@ -38,8 +38,9 @@
 @media(max-width:499px)
 {
     ul li{
-        display: flex;
-        
+            width:2rem;
+            margin: auto;
+            align-content: center;
     }
 }
 @media(min-width:500px) and (max-width:999px){
