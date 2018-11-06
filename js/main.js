@@ -26,8 +26,20 @@ function init() {
 }
 
 function back() {
+    navigate(0);
     document.getElementById("digits").value = "";
     document.getElementById("max").value = "";
+}
+
+function navigate(page) {
+    let pages = document.querySelectorAll(".page");
+    for (let j = 0; j < pages.length; j++) {
+        if (page == j) {
+            pages[j].classList.add("active");
+        } else {
+            pages[j].classList.remove("active");
+        }
+    }
 }
 let returnNum;
 
@@ -76,6 +88,7 @@ function getData() {
                 li.style.padding = "2rem";
                 li.style.margin = "1rem";
                 console.log(num);
+                navigate(1);
             });
         })
         .catch(function (error) {
