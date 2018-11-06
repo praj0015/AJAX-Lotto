@@ -18,10 +18,15 @@ function init() {
         pages[0].classList.toggle("active");
         pages[1].classList.toggle("active");
     });
-    
+
     document.getElementById("btnSend").addEventListener("click", getData);
+    document.getElementById("btnBack").addEventListener("click", Back);
 }
 
+function Back() {
+    document.getElementById("digits").value = "";
+    document.getElementById("max").value = "";
+}
 let returnNum;
 
 function getData() {
@@ -59,6 +64,7 @@ function getData() {
 
             returnNum = data.numbers;
             let ul = document.querySelector('.num_list');
+            ul.innerHTML = "";
             console.log(returnNum);
             returnNum.forEach(function (num) {
                 let li = document.createElement("li");
