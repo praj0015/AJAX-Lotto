@@ -1,14 +1,12 @@
-
-/*
-#home{
-    display: flex;
-   flex-direction:column;
-    align-content: center;
-    align-items: center;
-    padding: 2 rem;
-    border: solid 0.1rem red;
+.page {
+    display:none;
 }
-*/
+
+.active{
+    display: contents;
+}
+
+
 #home > header{
     font-size: 1.5rem;
     color: red;
@@ -44,13 +42,8 @@
     width: 100px;
     height: 40px;
 }
-.active{
-    display:block;
-}
 
-/*.page{
-    display:none;
-}*/
+
 
 
 

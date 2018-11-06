@@ -1,41 +1,27 @@
 document.addEventListener("DOMContentLoaded", init);
 
-let pages = [];
+let pages = []; // empty array
 
 function init() {
 
-    /* pages = document.querySelectorAll(".page");
-     console.log(pages);
-     document.getElementById("btnSend").addEventListener("click", function () {
-         pages[0].classList.toggle("active");
-         pages[1].classList.toggle("active");
-     });
-     document.getElementById("btnBack").addEventListener("click", function () {
-         pages[0].classList.toggle("active");
-         pages[1].classList.toggle("active");
-     });*/
+    // find all the pages 
+    pages = document.querySelectorAll(".page");
+    console.log(pages);
 
+    // The code commented out below is for a simple two page solution
+    document.getElementById("btnSend").addEventListener("click", function () {
+        pages[0].classList.toggle("active");
+        pages[1].classList.toggle("active");
+    });
+
+    document.getElementById("btnBack").addEventListener("click", function () {
+        pages[0].classList.toggle("active");
+        pages[1].classList.toggle("active");
+    });
+    
     document.getElementById("btnSend").addEventListener("click", getData);
-    document.getElementById("btnBack").addEventListener("click", back());
-
 }
 
-function back() {
-    navigate(0);
-    document.getElementById("digits").value = "";
-    document.getElementById("max").value = "";
-}
-
-function navigate(page) {
-    let pages = document.querySelectorAll(".page");
-    for (let j = 0; j < pages.length; j++) {
-        if (page == j) {
-            pages[j].classList.add("active");
-        } else {
-            pages[j].classList.remove("active");
-        }
-    }
-}
 let returnNum;
 
 function getData() {
@@ -83,7 +69,6 @@ function getData() {
                 li.style.padding = "2rem";
                 li.style.margin = "1rem";
                 console.log(num);
-                navigate(1);
             });
         })
         .catch(function (error) {
