@@ -72,8 +72,8 @@ function getData() {
                 ul.appendChild(li);
                 li.style.listStyleType = "none";
                 li.style.border = "solid 0.1rem red";
-                li.style.padding = "2rem";
-                li.style.margin = "1rem";
+//                li.style.padding = "2rem";
+//                li.style.margin = "1rem";
                 console.log(num);
             });
         })
