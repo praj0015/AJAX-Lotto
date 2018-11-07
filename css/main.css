@@ -34,6 +34,7 @@
     width: 50%;
     height: 40px;
     background-color: aqua;
+    align-content: center;
 }
 .main p button:hover{
     font-weight: bolder;
@@ -60,15 +61,24 @@ li{
     text-align: center;
     display: inline-block;
     background-color: rgb(200,200,200);
+    font-size: 1rem;
 }
 
 @media(max-width:499px)
 {
+    #home> section > p > label{
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    padding-right: 1rem;
+}
     ul li{
             width:2rem;
             margin-left: 8rem;
             align-content: center;
+            font-size: 1rem;
     }
+    
 }
 @media(min-width:500px) and (max-width:999px){
     
@@ -86,6 +96,7 @@ li{
         width: calc(100%/5);
         font-size: 1,5rem;
         line-height: 2;
+        font-size: 1.5rem;
     }
     .main p button{
         width:  50%;
@@ -93,7 +104,9 @@ li{
 }
 @media(min-width:1000px)
 {
-    
+    li{
+        font-size: 2rem;
+    }
     #home> section > p > label{
     font-size: 3rem;
     padding: 0.5rem;
